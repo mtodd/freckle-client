@@ -27,6 +27,13 @@ class FreckleTest < Test::Unit::TestCase
     assert !@connection.entries.empty?
   end
   
+  def test_user_by_login
+    assert_equal nil, @connection.user_by_login('nonexistentuser')
+    
+    user = @connection.users.first
+    assert_equal user, @connection.user_by_login(user.login)
+  end
+  
   ### Models
   
   def test_users_return_user_model
@@ -52,6 +59,13 @@ class FreckleTest < Test::Unit::TestCase
   end
   
   ### Associations
+  
+  def test_user_model_can_query_for_its_entries
+    assert user = @connection.users.first
+    user.entries.each do |entry|
+      assert_equal user, entry.user
+    end
+  end
   
   def test_project_model_can_query_for_its_entries
     assert project = @connection.projects.first

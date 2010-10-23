@@ -30,6 +30,9 @@ class Freckle
       User.new(user['user'], self)
     end
   end
+  def user_by_login(login)
+    self.users.detect{ |u| u.login == login }
+  end
   
   def projects(options = {})
     Array(JSON.parse(@connection['/projects.json'].get)).flatten.map do |project|
@@ -81,6 +84,14 @@ class Freckle
   class User < Base
     def self.all(options = {})
       super(:users, options)
+    end
+    def self.by_login(login)
+      Freckle.connection.user_by_login(login)
+    end
+    def entries(options = {})
+      people = (options.delete(:people) || [])
+      people.push(self.id) unless people.include?(self.id)
+      @connection.entries(options.merge(:people => people))
     end
   end
   
