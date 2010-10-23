@@ -3,8 +3,10 @@ require 'test_helper'
 class FreckleTest < Test::Unit::TestCase
   
   def setup
+    @logger = Logger.new(File.join(File.dirname(__FILE__), 'test.log'))
     @connection = Freckle.new(:account  => @account = "test",
-                              :token    => @token   = "test")
+                              :token    => @token   = "test",
+                              :logger   => @logger)
   end
   
   def teardown
@@ -77,12 +79,12 @@ class FreckleTest < Test::Unit::TestCase
   end
   
   def test_user_all_matches_users
-    Freckle.establish_connection(:account => @account, :token => @token)
+    Freckle.establish_connection(:account => @account, :token => @token, :logger => @logger)
     assert_equal @connection.users, Freckle::User.all
   end
   
   def test_user_first_matches_first_user
-    Freckle.establish_connection(:account => @account, :token => @token)
+    Freckle.establish_connection(:account => @account, :token => @token, :logger => @logger)
     assert_equal @connection.users.first, Freckle::User.first
   end
   
