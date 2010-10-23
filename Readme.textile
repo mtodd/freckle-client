@@ -6,6 +6,7 @@ Only supports reading data.
 
 h2. Example
 
+<pre>
 Freckle.establish_connection( :account => "apitest",
                               :token => "lx3gi6pxdjtjn57afp8c2bv1me7g89j" )
 
@@ -14,6 +15,7 @@ project.entries
 
 user = Freckle::User.by_login("admin")
 user.entries(:from => "2010-07-01", :to => "2010-07-31")
+</pre>
 
 h2. TODO
 
