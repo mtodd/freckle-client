@@ -23,10 +23,10 @@ Gem::Specification.new do |s|
     "test/freckle_test.rb",
     "test/test_helper.rb"
   ]
-  s.homepage = "http://github.com/reddavis/freckly"
+  s.homepage = "http://github.com/mtodd/freckle"
   
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = "1.3.6"
   
   s.test_files = [
     "test/freckle_test.rb",
