@@ -1,0 +1,16 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    fakeweb (1.3.0)
+    json (1.4.6)
+    mime-types (1.16)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fakeweb (= 1.3.0)
+  json (= 1.4.6)
+  rest-client (= 1.6.1)
