@@ -7,15 +7,36 @@ Only supports reading data.
 h2. Example
 
 <pre>
-Freckle.establish_connection( :account => "apitest",
-                              :token => "lx3gi6pxdjtjn57afp8c2bv1me7g89j" )
+Freckle.establish_connection( :account  => "apitest",
+                              :token    => "lx3gi6pxdjtjn57afp8c2bv1me7g89j" )
 
 project = Freckle::Project.all.first
+user = Freckle::User.by_login("admin")
+
+# all project's entries
 project.entries
 
-user = Freckle::User.by_login("admin")
-user.entries(:from => "2010-07-01", :to => "2010-07-31")
+# all project's entries for specific people
+project.entries(:people => [user.id])
+
+# user's entries for a time range
+user.entries(:from => "2010-07-01", :to => "2010-07-30")
+
+# user's unbillable entries
+user.entries(:billable => false)
+
+# entries matching search params for multiple people, projects, with tags,
+# in a date range, and only billable
+Freckle::Entry.all( :billable => true,
+                    :people => [user.id, 5543],
+                    :projects => [project.id, 8475],
+                    :tags => ["foobar"],
+                    :from => "2010-06-01",
+                    :to   => "2010-07-30")
 </pre>
+
+See http://github.com/madrobby/freckle-apidocs/blob/master/entries.mkdn for
+available entries query parameters.
 
 h2. TODO
 
