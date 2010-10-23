@@ -1,5 +1,7 @@
+require "rubygems"
+require "bundler/setup"
+
 require File.join(File.dirname(__FILE__), '..', 'lib', 'freckle')
-Bundler.setup(:test)
 
 require 'test/unit'
 require 'fakeweb'

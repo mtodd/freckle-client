@@ -2,10 +2,6 @@
 
 require 'logger'
 
-require "rubygems"
-require "bundler"
-Bundler.setup(:default)
-
 require 'rest_client'
 require 'json'
 
