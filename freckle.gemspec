@@ -15,11 +15,11 @@ Gem::Specification.new do |s|
     "README.textile",
     "Rakefile",
     "lib/freckle.rb",
-    "test/fixtures/entries.xml",
-    "test/fixtures/entries_for_project.xml",
-    "test/fixtures/entries_for_user.xml",
-    "test/fixtures/projects.xml",
-    "test/fixtures/users.xml",
+    "test/fixtures/entries.json",
+    "test/fixtures/entries_for_project.json",
+    "test/fixtures/entries_for_user.json",
+    "test/fixtures/projects.json",
+    "test/fixtures/users.json",
     "test/freckle_test.rb",
     "test/test_helper.rb"
   ]
