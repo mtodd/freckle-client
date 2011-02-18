@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name = "freckle"
-  s.version = "0.0.2"
+  s.version = "0.1.0"
   
   s.authors = ["Matt Todd"]
   s.email = "mtodd@highgroove.com"
   
-  s.date = "2010-10-23"
+  s.date = "2011-02-18"
   s.description = "Let's Freckle API Client"
   s.summary = "A Ruby client for the Let's Freckle API"
   
