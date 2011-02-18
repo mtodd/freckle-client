@@ -27,13 +27,13 @@ class FreckleTest < Test::Unit::TestCase
     assert !@connection.entries.empty?
   end
   
-  def test_user_by_login
-    assert_equal nil, @connection.user_by_login('nonexistentuser')
-    
+  def test_user_by_email
+    assert_equal nil, @connection.user_by_email('test@example.com')
+
     user = @connection.users.first
-    assert_equal user, @connection.user_by_login(user.login)
+    assert_equal user, @connection.user_by_email(user.email)
   end
-  
+
   ### Models
   
   def test_users_return_user_model

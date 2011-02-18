@@ -11,7 +11,7 @@ Freckle.establish_connection( :account  => "apitest",
                               :token    => "lx3gi6pxdjtjn57afp8c2bv1me7g89j" )
 
 project = Freckle::Project.all.first
-user = Freckle::User.by_login("admin")
+user = Freckle::User.by_email("test@example.com")
 
 # all project's entries
 project.entries

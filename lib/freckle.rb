@@ -30,8 +30,8 @@ class Freckle
       User.new(user['user'], self)
     end
   end
-  def user_by_login(login)
-    self.users.detect{ |u| u.login == login }
+  def user_by_email(email)
+    self.users.detect{ |u| u.email == email }
   end
   
   def projects(options = {})
@@ -85,8 +85,8 @@ class Freckle
     def self.all(options = {})
       super(:users, options)
     end
-    def self.by_login(login)
-      Freckle.connection.user_by_login(login)
+    def self.by_email(email)
+      Freckle.connection.user_by_email(email)
     end
     def entries(options = {})
       people = (options.delete(:people) || [])
