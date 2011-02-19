@@ -42,6 +42,12 @@ h2. TODO
 
 * CRUD
 
+h2. Contributors
+
+Thanks to:
+
+* Emily Price ("duien":http://github.com/duien)
+
 h2. License
 
 The MIT License
